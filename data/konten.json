@@ -1,0 +1,71 @@
+{
+  "buku": {
+    "judul": "Gema Gamping: Kisah Sang Bekakak",
+    "subjudul": "Buku Ilustrasi Tradisi Saparan Bekakak",
+    "sinopsis": "Buku ilustrasi yang mengajak pembaca menyelami kekayaan Tradisi Saparan Bekakak yang telah mengakar di Gamping, Yogyakarta.",
+    "harga": 85000,
+    "harga_coret": 140000,
+    "diskon_persen": 39,
+    "spesifikasi": {
+      "ukuran": "A4 (21x29.7cm)",
+      "halaman": 64,
+      "kertas": "Art Paper 150gr",
+      "jilid": "Hardcover",
+      "isbn": "XXX-XXX-XXXX-XX-X",
+      "cetakan": "Full Color"
+    }
+  },
+  "penulis": {
+    "nama": "Nicolaus Indra Permana",
+    "prodi": "Desain Komunikasi Visual",
+    "universitas": "Nama Universitas",
+    "bio": "Mahasiswa Program Studi Desain Komunikasi Visual yang memiliki ketertarikan mendalam terhadap pelestarian budaya Nusantara.",
+    "sosial_media": {
+      "instagram": "https://instagram.com/nclsfx_",
+      "linkedin": "https://linkedin.com/in/username",
+      "email": "nicolausindrapermana26@gmail.com"
+    }
+  },
+  "kontak": {
+    "whatsapp": "628999589006",
+    "email": "nicolausindrapermana26@gmail.com",
+    "alamat": "Jakarta, Indonesia"
+  },
+  "pembayaran": {
+    "bank_bca": {
+      "nomor": "1234567890",
+      "atas_nama": "Nicolaus Indra Permana"
+    },
+    "ewallet": {
+      "nomor": "08999589006",
+      "platform": [
+        "DANA",
+        "OVO",
+        "GoPay"
+      ]
+    }
+  },
+  "testimoni": [
+    {
+      "nama": "Dosen Pembimbing",
+      "peran": "Akademisi",
+      "inisial": "DS",
+      "rating": 5,
+      "teks": "Ilustrasinya sangat memukau dan detail. Buku ini berhasil menangkap esensi tradisi Saparan Bekakak dengan cara yang indah dan mudah dipahami."
+    },
+    {
+      "nama": "Warga Gamping",
+      "peran": "Tokoh Masyarakat",
+      "inisial": "WG",
+      "rating": 5,
+      "teks": "Sebagai warga Gamping, saya sangat tersentuh melihat tradisi kami didokumentasikan dengan begitu indah. Karya yang luar biasa!"
+    },
+    {
+      "nama": "Budayawan",
+      "peran": "Pecinta Budaya",
+      "inisial": "BP",
+      "rating": 5,
+      "teks": "Kualitas cetak dan ilustrasinya premium banget! Cocok untuk koleksi pecinta budaya Jawa dan referensi penelitian."
+    }
+  ]
+}
