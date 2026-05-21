@@ -164,6 +164,46 @@
       background-size: 200% 100%;
       animation: shimmer 3s infinite
     }
+
+    /* ===== MOBILE RESPONSIVE FIXES ===== */
+    @media (max-width: 767px) {
+      .fade-up {
+        transform: translateY(20px)
+      }
+
+      .slide-left {
+        transform: translateX(-20px)
+      }
+
+      .slide-right {
+        transform: translateX(20px)
+      }
+
+      .book-shadow {
+        box-shadow: 10px 10px 30px rgba(67, 39, 26, .25)
+      }
+
+      .gallery-img:hover {
+        transform: none;
+        box-shadow: none
+      }
+
+      .hero-book {
+        animation: float-mobile 3s ease-in-out infinite
+      }
+
+      @keyframes float-mobile {
+
+        0%,
+        100% {
+          transform: rotate(1deg) translateY(0)
+        }
+
+        50% {
+          transform: rotate(0deg) translateY(-6px)
+        }
+      }
+    }
   </style>
 </head>
 
@@ -224,32 +264,32 @@
   </nav>
 
   <!-- HERO -->
-  <section class="relative min-h-screen flex items-center overflow-hidden pt-20">
+  <section class="relative min-h-screen flex items-center overflow-hidden pt-16 pb-10 md:pt-20 md:pb-0">
     <div class="absolute inset-0">
       <img src="assets/images/cover/Background-Cover.png" alt="Background Cover" class="w-full h-full object-cover" />
     </div>
     <div class="absolute inset-0 bg-black/70"></div>
-    <div class="relative z-10 max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-      <div class="space-y-6 fade-up">
-        <div class="inline-flex items-center space-x-2 px-4 py-1.5 bg-white/10 rounded-full border border-white/20">
+    <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+      <div class="space-y-4 md:space-y-6 fade-up text-center lg:text-left order-2 lg:order-1">
+        <div class="inline-flex items-center space-x-2 px-3 py-1 md:px-4 md:py-1.5 bg-white/10 rounded-full border border-white/20">
           <span class="material-symbols-outlined text-emas-light text-sm"
             style="font-variation-settings:'FILL' 1">auto_awesome</span>
-          <span class="text-xs font-semibold uppercase tracking-widest text-emas-light">Edisi Terbatas</span>
+          <span class="text-[10px] md:text-xs font-semibold uppercase tracking-widest text-emas-light">Edisi Terbatas</span>
         </div>
-        <h1 class="font-display text-4xl md:text-6xl font-bold text-white leading-tight">Gema Gamping:<br /><span
+        <h1 class="font-display text-3xl sm:text-4xl md:text-6xl font-bold text-white leading-tight">Gema Gamping:<br /><span
             class="text-emas-light">Kisah Sang Bekakak</span></h1>
-        <p class="text-lg text-white/80 max-w-lg leading-relaxed">Menyelami kedalaman Tradisi Saparan Bekakak
+        <p class="text-base md:text-lg text-white/80 max-w-lg mx-auto lg:mx-0 leading-relaxed">Menyelami kedalaman Tradisi Saparan Bekakak
           melalui perpaduan narasi akademis dan ilustrasi memukau. Sebuah penghormatan pada warisan budaya Yogyakarta.
         </p>
-        <div class="flex flex-wrap gap-4 pt-2">
+        <div class="flex flex-wrap gap-3 md:gap-4 pt-2 justify-center lg:justify-start">
           <a href="#pesan"
-            class="shimmer-badge text-white font-semibold text-sm uppercase tracking-widest px-8 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5">Pesan
+            class="shimmer-badge text-white font-semibold text-xs md:text-sm uppercase tracking-widest px-6 md:px-8 py-2.5 md:py-3 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5">Pesan
             Sekarang</a>
           <a href="#galeri"
-            class="border-2 border-white text-white font-semibold text-sm uppercase tracking-widest px-8 py-3 rounded-lg hover:bg-white hover:text-sogan transition-all">Lihat
+            class="border-2 border-white text-white font-semibold text-xs md:text-sm uppercase tracking-widest px-6 md:px-8 py-2.5 md:py-3 rounded-lg hover:bg-white hover:text-sogan transition-all">Lihat
             Preview</a>
         </div>
-        <div class="flex items-center gap-6 pt-4 text-sm text-white/60">
+        <div class="flex items-center justify-center lg:justify-start gap-4 md:gap-6 pt-3 md:pt-4 text-xs md:text-sm text-white/60 flex-wrap">
           <div class="flex items-center gap-1"><span class="material-symbols-outlined text-emas-light text-base"
               style="font-variation-settings:'FILL' 1">menu_book</span> 64 Halaman</div>
           <div class="flex items-center gap-1"><span class="material-symbols-outlined text-emas-light text-base"
@@ -258,10 +298,10 @@
               style="font-variation-settings:'FILL' 1">verified</span> ISBN Resmi</div>
         </div>
       </div>
-      <div class="flex justify-center fade-up">
+      <div class="flex justify-center fade-up order-1 lg:order-2">
         <div class="relative hero-book">
           <div
-            class="w-72 md:w-80 aspect-[2/3] rounded-lg book-shadow overflow-hidden border border-outline-light/50 bg-sogan">
+            class="w-52 sm:w-64 md:w-72 lg:w-80 aspect-[2/3] rounded-lg book-shadow overflow-hidden border border-outline-light/50 bg-sogan">
             <img alt="Cover Buku Gema Gamping" class="w-full h-full object-cover"
               src="assets/images/cover/Cover-Image.png" />
             <div
@@ -269,7 +309,7 @@
             </div>
           </div>
           <img src="assets/images/cover/New-Arrival.png" alt="New Arrival"
-            class="absolute -top-10 -right-10 w-36 h-36 object-contain drop-shadow-lg z-10 rotate-12" />
+            class="absolute -top-6 -right-6 w-24 h-24 sm:-top-8 sm:-right-8 sm:w-28 sm:h-28 md:-top-10 md:-right-10 md:w-36 md:h-36 object-contain drop-shadow-lg z-10 rotate-12" />
         </div>
       </div>
     </div>
@@ -277,20 +317,20 @@
 
 
   <!-- TENTANG BUKU -->
-  <section id="tentang" class="relative py-20 md:py-28 overflow-hidden">
+  <section id="tentang" class="relative py-12 md:py-20 lg:py-28 overflow-hidden">
     <div class="absolute inset-0">
       <img src="assets/images/cover/Batik-Parang.jpg" alt="Batik Parang" class="w-full h-full object-cover" />
     </div>
     <div class="absolute inset-0 bg-white/90"></div>
     <div class="relative z-10 max-w-6xl mx-auto px-6">
-      <div class="text-center mb-16 fade-up">
-        <span class="font-accent text-emas text-xl">Tentang Buku</span>
-        <h2 class="font-display text-3xl md:text-4xl font-bold text-sogan mt-2">Sebuah Karya yang Bermakna</h2>
+      <div class="text-center mb-10 md:mb-16 fade-up">
+        <span class="font-accent text-emas text-lg md:text-xl">Tentang Buku</span>
+        <h2 class="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-sogan mt-2">Sebuah Karya yang Bermakna</h2>
         <div class="w-16 h-1 bg-emas mx-auto mt-4 rounded-full"></div>
       </div>
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
         <div class="slide-left">
-          <div class="bg-sogan rounded-xl p-8 border border-sogan-light/50">
+          <div class="bg-sogan rounded-xl p-5 md:p-8 border border-sogan-light/50">
             <h3 class="font-display text-2xl font-semibold text-white mb-4">Sinopsis</h3>
             <p class="text-white/80 leading-relaxed mb-6">Buku ilustrasi "Gema Gamping: Kisah Sang Bekakak"
               mengajak pembaca menyelami kekayaan Tradisi Saparan Bekakak yang telah mengakar di Gamping, Yogyakarta.
@@ -301,8 +341,8 @@
           </div>
         </div>
         <div class="slide-right space-y-6">
-          <h3 class="font-display text-2xl font-semibold text-sogan">Spesifikasi Buku</h3>
-          <div class="grid grid-cols-2 gap-4">
+          <h3 class="font-display text-xl md:text-2xl font-semibold text-sogan">Spesifikasi Buku</h3>
+          <div class="grid grid-cols-2 gap-3 md:gap-4">
             <div class="bg-sogan rounded-lg p-4 text-center border border-sogan-light/30">
               <p class="text-xs uppercase tracking-widest text-white/60 mb-1">Ukuran</p>
               <p class="font-semibold text-white">A4 (21×29.7cm)</p>
@@ -320,9 +360,9 @@
               <p class="font-semibold text-white">Hardcover</p>
             </div>
           </div>
-          <div class="flex items-end gap-3 pt-2">
+          <div class="flex items-end gap-2 md:gap-3 pt-2 flex-wrap">
             <span class="text-sm text-outline line-through">Rp 140.000</span>
-            <span class="font-display text-3xl font-bold text-emas">Rp 85.000</span>
+            <span class="font-display text-2xl md:text-3xl font-bold text-emas">Rp 85.000</span>
             <span class="bg-merah text-white text-xs font-bold px-2 py-0.5 rounded">-39%</span>
           </div>
           <div class="flex flex-wrap gap-3 pt-2">
@@ -342,15 +382,15 @@
   </section>
 
   <!-- GALERI -->
-  <section id="galeri" class="py-20 md:py-28 bg-krem-dark">
+  <section id="galeri" class="py-12 md:py-20 lg:py-28 bg-krem-dark">
     <div class="max-w-6xl mx-auto px-6">
-      <div class="text-center mb-16 fade-up">
-        <span class="font-accent text-emas text-xl">Preview Buku</span>
-        <h2 class="font-display text-3xl md:text-4xl font-bold text-sogan mt-2">Galeri Ilustrasi</h2>
+      <div class="text-center mb-10 md:mb-16 fade-up">
+        <span class="font-accent text-emas text-lg md:text-xl">Preview Buku</span>
+        <h2 class="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-sogan mt-2">Galeri Ilustrasi</h2>
         <div class="w-16 h-1 bg-emas mx-auto mt-4 rounded-full"></div>
-        <p class="text-coklat-text/70 mt-4 max-w-lg mx-auto">Intip beberapa halaman pilihan dari buku ilustrasi ini</p>
+        <p class="text-sm md:text-base text-coklat-text/70 mt-3 md:mt-4 max-w-lg mx-auto">Intip beberapa halaman pilihan dari buku ilustrasi ini</p>
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
         <div onclick="openLightbox(this)"
           class="gallery-img cursor-pointer rounded-xl overflow-hidden border border-outline-light/50 bg-white fade-up">
           <img alt="Ilustrasi prosesi Saparan" class="w-full aspect-[4/3] object-cover"
@@ -405,16 +445,16 @@
   </section>
 
   <!-- MERCHANDISE -->
-  <section id="merchandise" class="py-20 md:py-28 bg-white relative overflow-hidden">
+  <section id="merchandise" class="py-12 md:py-20 lg:py-28 bg-white relative overflow-hidden">
     <div class="absolute inset-0 batik-pattern opacity-40"></div>
     <div class="relative z-10 max-w-6xl mx-auto px-6">
-      <div class="text-center mb-16 fade-up">
-        <span class="font-accent text-emas text-xl">Koleksi Eksklusif</span>
-        <h2 class="font-display text-3xl md:text-4xl font-bold text-sogan mt-2">Merchandise</h2>
+      <div class="text-center mb-10 md:mb-16 fade-up">
+        <span class="font-accent text-emas text-lg md:text-xl">Koleksi Eksklusif</span>
+        <h2 class="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-sogan mt-2">Merchandise</h2>
         <div class="w-16 h-1 bg-emas mx-auto mt-4 rounded-full"></div>
-        <p class="text-coklat-text/70 mt-4 max-w-lg mx-auto">Lengkapi koleksimu dengan merchandise eksklusif bertema Gema Gamping</p>
+        <p class="text-sm md:text-base text-coklat-text/70 mt-3 md:mt-4 max-w-lg mx-auto">Lengkapi koleksimu dengan merchandise eksklusif bertema Gema Gamping</p>
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-8">
 
         <!-- T-shirt Man -->
         <div class="group bg-white rounded-2xl overflow-hidden border border-outline-light/50 shadow-sm hover:shadow-xl transition-all duration-500 fade-up">
@@ -424,12 +464,12 @@
               <span class="bg-sogan text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Populer</span>
             </div>
           </div>
-          <div class="p-5">
-            <h3 class="font-display text-lg font-semibold text-sogan">T-shirt Pria</h3>
-            <p class="text-sm text-coklat-text/60 mt-1">Kaos dengan desain ilustrasi Bekakak eksklusif</p>
-            <div class="flex items-center justify-between mt-4">
-              <span class="font-display text-xl font-bold text-emas">Rp 95.000</span>
-              <span class="material-symbols-outlined text-emas/60 text-sm" style="font-variation-settings:'FILL' 1">checkroom</span>
+          <div class="p-3 md:p-5">
+            <h3 class="font-display text-sm md:text-lg font-semibold text-sogan">T-shirt Pria</h3>
+            <p class="text-xs md:text-sm text-coklat-text/60 mt-1 hidden sm:block">Kaos dengan desain ilustrasi Bekakak eksklusif</p>
+            <div class="flex items-center justify-between mt-2 md:mt-4">
+              <span class="font-display text-base md:text-xl font-bold text-emas">Rp 95.000</span>
+              <span class="material-symbols-outlined text-emas/60 text-sm hidden md:inline" style="font-variation-settings:'FILL' 1">checkroom</span>
             </div>
           </div>
         </div>
@@ -442,12 +482,12 @@
               <span class="bg-sogan text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Populer</span>
             </div>
           </div>
-          <div class="p-5">
-            <h3 class="font-display text-lg font-semibold text-sogan">T-shirt Wanita</h3>
-            <p class="text-sm text-coklat-text/60 mt-1">Kaos wanita dengan sentuhan motif tradisional</p>
-            <div class="flex items-center justify-between mt-4">
-              <span class="font-display text-xl font-bold text-emas">Rp 95.000</span>
-              <span class="material-symbols-outlined text-emas/60 text-sm" style="font-variation-settings:'FILL' 1">checkroom</span>
+          <div class="p-3 md:p-5">
+            <h3 class="font-display text-sm md:text-lg font-semibold text-sogan">T-shirt Wanita</h3>
+            <p class="text-xs md:text-sm text-coklat-text/60 mt-1 hidden sm:block">Kaos wanita dengan sentuhan motif tradisional</p>
+            <div class="flex items-center justify-between mt-2 md:mt-4">
+              <span class="font-display text-base md:text-xl font-bold text-emas">Rp 95.000</span>
+              <span class="material-symbols-outlined text-emas/60 text-sm hidden md:inline" style="font-variation-settings:'FILL' 1">checkroom</span>
             </div>
           </div>
         </div>
@@ -460,12 +500,12 @@
               <span class="bg-emas text-sogan text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Best Seller</span>
             </div>
           </div>
-          <div class="p-5">
-            <h3 class="font-display text-lg font-semibold text-sogan">Tote Bag</h3>
-            <p class="text-sm text-coklat-text/60 mt-1">Tas kanvas premium dengan ilustrasi original</p>
-            <div class="flex items-center justify-between mt-4">
-              <span class="font-display text-xl font-bold text-emas">Rp 65.000</span>
-              <span class="material-symbols-outlined text-emas/60 text-sm" style="font-variation-settings:'FILL' 1">shopping_bag</span>
+          <div class="p-3 md:p-5">
+            <h3 class="font-display text-sm md:text-lg font-semibold text-sogan">Tote Bag</h3>
+            <p class="text-xs md:text-sm text-coklat-text/60 mt-1 hidden sm:block">Tas kanvas premium dengan ilustrasi original</p>
+            <div class="flex items-center justify-between mt-2 md:mt-4">
+              <span class="font-display text-base md:text-xl font-bold text-emas">Rp 65.000</span>
+              <span class="material-symbols-outlined text-emas/60 text-sm hidden md:inline" style="font-variation-settings:'FILL' 1">shopping_bag</span>
             </div>
           </div>
         </div>
@@ -475,12 +515,12 @@
           <div class="relative overflow-hidden bg-krem-dark">
             <img src="assets/images/merchandise/Postcard-Bekakak.png" alt="Postcard Bekakak" class="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-500" />
           </div>
-          <div class="p-5">
-            <h3 class="font-display text-lg font-semibold text-sogan">Postcard Bekakak</h3>
-            <p class="text-sm text-coklat-text/60 mt-1">Kartu pos ilustrasi prosesi Sang Bekakak</p>
-            <div class="flex items-center justify-between mt-4">
-              <span class="font-display text-xl font-bold text-emas">Rp 15.000</span>
-              <span class="material-symbols-outlined text-emas/60 text-sm" style="font-variation-settings:'FILL' 1">mail</span>
+          <div class="p-3 md:p-5">
+            <h3 class="font-display text-sm md:text-lg font-semibold text-sogan">Postcard Bekakak</h3>
+            <p class="text-xs md:text-sm text-coklat-text/60 mt-1 hidden sm:block">Kartu pos ilustrasi prosesi Sang Bekakak</p>
+            <div class="flex items-center justify-between mt-2 md:mt-4">
+              <span class="font-display text-base md:text-xl font-bold text-emas">Rp 15.000</span>
+              <span class="material-symbols-outlined text-emas/60 text-sm hidden md:inline" style="font-variation-settings:'FILL' 1">mail</span>
             </div>
           </div>
         </div>
@@ -490,12 +530,12 @@
           <div class="relative overflow-hidden bg-krem-dark">
             <img src="assets/images/merchandise/Postcard-Bregada.png" alt="Postcard Bregada" class="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-500" />
           </div>
-          <div class="p-5">
-            <h3 class="font-display text-lg font-semibold text-sogan">Postcard Bregada</h3>
-            <p class="text-sm text-coklat-text/60 mt-1">Kartu pos ilustrasi pasukan Bregada</p>
-            <div class="flex items-center justify-between mt-4">
-              <span class="font-display text-xl font-bold text-emas">Rp 15.000</span>
-              <span class="material-symbols-outlined text-emas/60 text-sm" style="font-variation-settings:'FILL' 1">mail</span>
+          <div class="p-3 md:p-5">
+            <h3 class="font-display text-sm md:text-lg font-semibold text-sogan">Postcard Bregada</h3>
+            <p class="text-xs md:text-sm text-coklat-text/60 mt-1 hidden sm:block">Kartu pos ilustrasi pasukan Bregada</p>
+            <div class="flex items-center justify-between mt-2 md:mt-4">
+              <span class="font-display text-base md:text-xl font-bold text-emas">Rp 15.000</span>
+              <span class="material-symbols-outlined text-emas/60 text-sm hidden md:inline" style="font-variation-settings:'FILL' 1">mail</span>
             </div>
           </div>
         </div>
@@ -505,12 +545,12 @@
           <div class="relative overflow-hidden bg-krem-dark">
             <img src="assets/images/merchandise/Postcard-Entitas-Gaib.png" alt="Postcard Entitas Gaib" class="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-500" />
           </div>
-          <div class="p-5">
-            <h3 class="font-display text-lg font-semibold text-sogan">Postcard Entitas Gaib</h3>
-            <p class="text-sm text-coklat-text/60 mt-1">Kartu pos ilustrasi mistis Entitas Gaib</p>
-            <div class="flex items-center justify-between mt-4">
-              <span class="font-display text-xl font-bold text-emas">Rp 15.000</span>
-              <span class="material-symbols-outlined text-emas/60 text-sm" style="font-variation-settings:'FILL' 1">mail</span>
+          <div class="p-3 md:p-5">
+            <h3 class="font-display text-sm md:text-lg font-semibold text-sogan">Postcard Entitas Gaib</h3>
+            <p class="text-xs md:text-sm text-coklat-text/60 mt-1 hidden sm:block">Kartu pos ilustrasi mistis Entitas Gaib</p>
+            <div class="flex items-center justify-between mt-2 md:mt-4">
+              <span class="font-display text-base md:text-xl font-bold text-emas">Rp 15.000</span>
+              <span class="material-symbols-outlined text-emas/60 text-sm hidden md:inline" style="font-variation-settings:'FILL' 1">mail</span>
             </div>
           </div>
         </div>
@@ -519,10 +559,10 @@
 
       <!-- Bundle CTA -->
       <div class="mt-12 fade-up">
-        <div class="bg-gradient-to-r from-sogan to-sogan-light rounded-2xl p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6 border border-sogan-light/30">
+        <div class="bg-gradient-to-r from-sogan to-sogan-light rounded-2xl p-6 md:p-8 lg:p-10 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-6 border border-sogan-light/30">
           <div class="text-center md:text-left">
-            <h3 class="font-display text-2xl font-bold text-white">Paket Bundling Hemat!</h3>
-            <p class="text-white/70 mt-2">Dapatkan buku + merchandise pilihan dengan harga spesial. Hubungi kami untuk info lengkap.</p>
+            <h3 class="font-display text-xl md:text-2xl font-bold text-white">Paket Bundling Hemat!</h3>
+            <p class="text-white/70 mt-2 text-sm md:text-base">Dapatkan buku + merchandise pilihan dengan harga spesial. Hubungi kami untuk info lengkap.</p>
           </div>
           <a href="https://wa.me/628999589006?text=Halo%2C%20saya%20tertarik%20dengan%20paket%20bundling%20merchandise%20Gema%20Gamping.%20Bisa%20info%20lebih%20lanjut%3F" target="_blank"
             class="shrink-0 shimmer-badge text-white font-semibold text-sm uppercase tracking-widest px-8 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5">
@@ -534,19 +574,19 @@
   </section>
 
   <!-- TRADISI -->
-  <section id="tradisi" class="relative py-20 md:py-28 text-white overflow-hidden">
+  <section id="tradisi" class="relative py-12 md:py-20 lg:py-28 text-white overflow-hidden">
     <div class="absolute inset-0">
       <img src="assets/images/tradisi/Background-Cover-Tradisi-Parang.jpg" alt="Background Tradisi"
         class="w-full h-full object-cover" />
     </div>
     <div class="absolute inset-0 bg-sogan/95"></div>
     <div class="relative z-10 max-w-6xl mx-auto px-6">
-      <div class="text-center mb-16 fade-up">
-        <span class="font-accent text-emas-light text-xl">Warisan Budaya</span>
-        <h2 class="font-display text-3xl md:text-4xl font-bold text-white mt-2">Tradisi Saparan Bekakak</h2>
+      <div class="text-center mb-10 md:mb-16 fade-up">
+        <span class="font-accent text-emas-light text-lg md:text-xl">Warisan Budaya</span>
+        <h2 class="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white mt-2">Tradisi Saparan Bekakak</h2>
         <div class="w-16 h-1 bg-emas mx-auto mt-4 rounded-full"></div>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center mb-10 md:mb-16">
         <div class="slide-left space-y-6">
           <p class="text-white/80 leading-relaxed">Tradisi Saparan Bekakak merupakan upacara adat yang digelar setiap
             bulan Sapar di Dusun Gamping, Ambarketawang, Sleman, Yogyakarta. Tradisi ini bermula dari legenda sepasang
@@ -554,8 +594,8 @@
           <p class="text-white/80 leading-relaxed">Prosesi utama melibatkan pemotongan sepasang boneka pengantin
             (bekakak) yang melambangkan pengorbanan dan keikhlasan. Masyarakat memperebutkan potongan bekakak sebagai
             simbol keberkahan.</p>
-          <div class="bg-white/10 backdrop-blur rounded-lg p-6 border border-white/20">
-            <p class="font-accent text-emas-light text-lg italic">"Saparan Bekakak bukan sekadar ritual, melainkan
+          <div class="bg-white/10 backdrop-blur rounded-lg p-4 md:p-6 border border-white/20">
+            <p class="font-accent text-emas-light text-base md:text-lg italic">"Saparan Bekakak bukan sekadar ritual, melainkan
               refleksi kebersamaan dan pengorbanan yang melampaui waktu."</p>
           </div>
         </div>
@@ -599,32 +639,32 @@
         </div>
       </div>
       <div
-        class="fade-up bg-white/5 rounded-xl p-6 border border-white/10 flex flex-col md:flex-row items-center gap-6">
-        <span class="material-symbols-outlined text-emas text-4xl"
+        class="fade-up bg-white/5 rounded-xl p-5 md:p-6 border border-white/10 flex flex-col md:flex-row items-center gap-4 md:gap-6">
+        <span class="material-symbols-outlined text-emas text-3xl md:text-4xl"
           style="font-variation-settings:'FILL' 1">location_on</span>
-        <div class="text-center md:text-left">
-          <h4 class="font-semibold text-white">Lokasi Tradisi</h4>
-          <p class="text-white/60 text-sm">Dusun Gamping, Ambarketawang, Sleman, D.I. Yogyakarta</p>
+        <div class="text-center md:text-left flex-1">
+          <h4 class="font-semibold text-white text-sm md:text-base">Lokasi Tradisi</h4>
+          <p class="text-white/60 text-xs md:text-sm">Dusun Gamping, Ambarketawang, Sleman, D.I. Yogyakarta</p>
         </div>
         <a href="https://maps.google.com/?q=Gamping+Ambarketawang+Sleman+Yogyakarta" target="_blank"
-          class="border border-emas text-emas text-sm px-5 py-2 rounded hover:bg-emas hover:text-sogan transition ml-auto">Lihat
+          class="border border-emas text-emas text-xs md:text-sm px-4 md:px-5 py-2 rounded hover:bg-emas hover:text-sogan transition w-full md:w-auto text-center">Lihat
           di Maps</a>
       </div>
     </div>
   </section>
 
   <!-- PENULIS -->
-  <section id="penulis" class="py-20 md:py-28 bg-white">
+  <section id="penulis" class="py-12 md:py-20 lg:py-28 bg-white">
     <div class="max-w-6xl mx-auto px-6">
-      <div class="text-center mb-16 fade-up">
-        <span class="font-accent text-emas text-xl">Di Balik Karya</span>
-        <h2 class="font-display text-3xl md:text-4xl font-bold text-sogan mt-2">Tentang Penulis</h2>
+      <div class="text-center mb-10 md:mb-16 fade-up">
+        <span class="font-accent text-emas text-lg md:text-xl">Di Balik Karya</span>
+        <h2 class="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-sogan mt-2">Tentang Penulis</h2>
         <div class="w-16 h-1 bg-emas mx-auto mt-4 rounded-full"></div>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-4xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center max-w-4xl mx-auto">
         <div class="flex justify-center slide-left">
           <div
-            class="w-64 h-64 rounded-full bg-gradient-to-br from-emas/30 to-sogan/20 overflow-hidden border-4 border-emas/30 shadow-xl">
+            class="w-48 h-48 md:w-64 md:h-64 rounded-full bg-gradient-to-br from-emas/30 to-sogan/20 overflow-hidden border-4 border-emas/30 shadow-xl">
             <img src="assets/images/penulis/Photo-Profile.jpeg" alt="Nicolaus Indra Permana"
               class="w-full h-full object-cover" />
           </div>
@@ -657,14 +697,14 @@
   </section>
 
   <!-- TESTIMONI -->
-  <section id="testimoni" class="py-20 md:py-28 bg-krem">
+  <section id="testimoni" class="py-12 md:py-20 lg:py-28 bg-krem">
     <div class="max-w-6xl mx-auto px-6">
-      <div class="text-center mb-16 fade-up">
-        <span class="font-accent text-emas text-xl">Apa Kata Mereka</span>
-        <h2 class="font-display text-3xl md:text-4xl font-bold text-sogan mt-2">Testimoni</h2>
+      <div class="text-center mb-10 md:mb-16 fade-up">
+        <span class="font-accent text-emas text-lg md:text-xl">Apa Kata Mereka</span>
+        <h2 class="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-sogan mt-2">Testimoni</h2>
         <div class="w-16 h-1 bg-emas mx-auto mt-4 rounded-full"></div>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
         <div
           class="bg-white rounded-xl p-6 border border-outline-light/50 shadow-sm hover:shadow-md transition fade-up">
           <div class="flex text-emas mb-3"><span class="material-symbols-outlined text-sm"
@@ -730,16 +770,16 @@
   </section>
 
   <!-- PEMESANAN -->
-  <section id="pesan" class="py-20 md:py-28 bg-gradient-to-br from-sogan-light to-sogan text-white">
-    <div class="max-w-4xl mx-auto px-6">
-      <div class="text-center mb-12 fade-up">
-        <span class="font-accent text-emas-light text-xl">Dapatkan Bukumu</span>
-        <h2 class="font-display text-3xl md:text-4xl font-bold text-white mt-2">Pesan Sekarang</h2>
+  <section id="pesan" class="py-12 md:py-20 lg:py-28 bg-gradient-to-br from-sogan-light to-sogan text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-8 md:mb-12 fade-up">
+        <span class="font-accent text-emas-light text-lg md:text-xl">Dapatkan Bukumu</span>
+        <h2 class="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white mt-2">Pesan Sekarang</h2>
         <div class="w-16 h-1 bg-emas mx-auto mt-4 rounded-full"></div>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="bg-white/10 backdrop-blur rounded-xl p-6 border border-white/20 fade-up">
-          <h3 class="font-display text-xl font-semibold mb-6 text-white">Form Pemesanan</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        <div class="bg-white/10 backdrop-blur rounded-xl p-4 md:p-6 border border-white/20 fade-up">
+          <h3 class="font-display text-lg md:text-xl font-semibold mb-4 md:mb-6 text-white">Form Pemesanan</h3>
           <form id="order-form" class="space-y-4">
             <div><label class="text-sm text-white/70 mb-1 block">Nama Lengkap</label><input type="text" id="nama"
                 required
@@ -818,11 +858,11 @@
   </section>
 
   <!-- FAQ -->
-  <section id="faq" class="py-20 md:py-28 bg-white">
-    <div class="max-w-3xl mx-auto px-6">
-      <div class="text-center mb-12 fade-up">
-        <span class="font-accent text-emas text-xl">Pertanyaan Umum</span>
-        <h2 class="font-display text-3xl md:text-4xl font-bold text-sogan mt-2">FAQ</h2>
+  <section id="faq" class="py-12 md:py-20 lg:py-28 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-8 md:mb-12 fade-up">
+        <span class="font-accent text-emas text-lg md:text-xl">Pertanyaan Umum</span>
+        <h2 class="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-sogan mt-2">FAQ</h2>
         <div class="w-16 h-1 bg-emas mx-auto mt-4 rounded-full"></div>
       </div>
       <div class="space-y-3 fade-up">
@@ -877,9 +917,9 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="bg-sogan text-white py-16 border-t-4 border-emas">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+  <footer class="bg-sogan text-white py-10 md:py-16 border-t-4 border-emas">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-10 mb-8 md:mb-10">
         <div>
           <h3 class="font-display text-2xl font-bold mb-3">Gema Gamping</h3>
           <p class="text-white/60 text-sm leading-relaxed">Sebuah dedikasi untuk pelestarian budaya Nusantara melalui
@@ -919,7 +959,7 @@
 
   <!-- WHATSAPP FLOAT -->
   <a href="https://wa.me/628999589006?text=Halo%2C%20saya%20ingin%20memesan%20buku%20Gema%20Gamping" target="_blank"
-    class="float-wa fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition-colors"
+    class="float-wa fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 w-12 h-12 md:w-14 md:h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition-colors"
     title="Chat WhatsApp">
     <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
       <path
@@ -929,7 +969,7 @@
 
   <!-- BACK TO TOP -->
   <button id="back-top" onclick="window.scrollTo({top:0})"
-    class="fixed bottom-6 left-6 z-50 w-12 h-12 bg-sogan/80 text-white rounded-full flex items-center justify-center shadow-lg hover:bg-sogan transition opacity-0 pointer-events-none"
+    class="fixed bottom-4 left-4 md:bottom-6 md:left-6 z-50 w-10 h-10 md:w-12 md:h-12 bg-sogan/80 text-white rounded-full flex items-center justify-center shadow-lg hover:bg-sogan transition opacity-0 pointer-events-none"
     style="transition:opacity .3s">
     <span class="material-symbols-outlined">arrow_upward</span>
   </button>
@@ -944,7 +984,7 @@
     // Mobile menu
     function toggleMobile() { document.getElementById('mobile-menu').classList.toggle('translate-x-full') }
     // Intersection Observer for animations
-    const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target) } }) }, { threshold: 0.15 });
+    const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target) } }) }, { threshold: window.innerWidth < 768 ? 0.05 : 0.15 });
     document.querySelectorAll('.fade-up,.slide-left,.slide-right').forEach(el => observer.observe(el));
     // Lightbox
     function openLightbox(el) { const img = el.querySelector('img'); if (img) { document.getElementById('lightbox-img').src = img.src; document.getElementById('lightbox').classList.add('active') } }
