@@ -222,8 +222,6 @@
         class="material-symbols-outlined text-3xl">close</span></button>
     <a href="#tentang" onclick="toggleMobile()"
       class="font-display text-2xl text-sogan hover:text-emas transition">Tentang Buku</a>
-    <a href="#galeri" onclick="toggleMobile()"
-      class="font-display text-2xl text-sogan hover:text-emas transition">Galeri</a>
     <a href="#merchandise" onclick="toggleMobile()"
       class="font-display text-2xl text-sogan hover:text-emas transition">Merchandise</a>
     <a href="#tradisi" onclick="toggleMobile()"
@@ -246,8 +244,6 @@
       <div class="hidden md:flex items-center space-x-8">
         <a href="#tentang"
           class="nav-link text-xs font-semibold uppercase tracking-widest text-white/80 hover:text-emas-light transition-colors duration-500">Tentang</a>
-        <a href="#galeri"
-          class="nav-link text-xs font-semibold uppercase tracking-widest text-white/80 hover:text-emas-light transition-colors duration-500">Galeri</a>
         <a href="#merchandise"
           class="nav-link text-xs font-semibold uppercase tracking-widest text-white/80 hover:text-emas-light transition-colors duration-500">Merchandise</a>
         <a href="#tradisi"
@@ -285,9 +281,9 @@
           <a href="#pesan"
             class="shimmer-badge text-white font-semibold text-xs md:text-sm uppercase tracking-widest px-6 md:px-8 py-2.5 md:py-3 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5">Pesan
             Sekarang</a>
-          <a href="#galeri"
+          <a href="#merchandise"
             class="border-2 border-white text-white font-semibold text-xs md:text-sm uppercase tracking-widest px-6 md:px-8 py-2.5 md:py-3 rounded-lg hover:bg-white hover:text-sogan transition-all">Lihat
-            Preview</a>
+            Merchandise</a>
         </div>
         <div class="flex items-center justify-center lg:justify-start gap-4 md:gap-6 pt-3 md:pt-4 text-xs md:text-sm text-white/60 flex-wrap">
           <div class="flex items-center gap-1"><span class="material-symbols-outlined text-emas-light text-base"
@@ -381,68 +377,7 @@
     </div>
   </section>
 
-  <!-- GALERI -->
-  <section id="galeri" class="py-12 md:py-20 lg:py-28 bg-krem-dark">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="text-center mb-10 md:mb-16 fade-up">
-        <span class="font-accent text-emas text-lg md:text-xl">Preview Buku</span>
-        <h2 class="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-sogan mt-2">Galeri Ilustrasi</h2>
-        <div class="w-16 h-1 bg-emas mx-auto mt-4 rounded-full"></div>
-        <p class="text-sm md:text-base text-coklat-text/70 mt-3 md:mt-4 max-w-lg mx-auto">Intip beberapa halaman pilihan dari buku ilustrasi ini</p>
-      </div>
-      <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
-        <div onclick="openLightbox(this)"
-          class="gallery-img cursor-pointer rounded-xl overflow-hidden border border-outline-light/50 bg-white fade-up">
-          <img alt="Ilustrasi prosesi Saparan" class="w-full aspect-[4/3] object-cover"
-            src="assets/images/galeri/ilustrasi-01-prosesi-saparan.jpg" />
-          <div class="p-3 text-center">
-            <p class="text-sm text-outline">Prosesi Tradisi Saparan</p>
-          </div>
-        </div>
-        <div onclick="openLightbox(this)"
-          class="gallery-img cursor-pointer rounded-xl overflow-hidden border border-outline-light/50 bg-white fade-up">
-          <img alt="Ilustrasi Bekakak" class="w-full aspect-[4/3] object-cover"
-            src="assets/images/galeri/ilustrasi-02-bekakak.jpg" />
-          <div class="p-3 text-center">
-            <p class="text-sm text-outline">Sang Bekakak</p>
-          </div>
-        </div>
-        <div onclick="openLightbox(this)"
-          class="gallery-img cursor-pointer rounded-xl overflow-hidden border border-outline-light/50 bg-white fade-up">
-          <img alt="Ilustrasi budaya Jawa" class="w-full aspect-[4/3] object-cover"
-            src="assets/images/galeri/ilustrasi-03-budaya-gamping.jpg" />
-          <div class="p-3 text-center">
-            <p class="text-sm text-outline">Budaya Gamping</p>
-          </div>
-        </div>
-        <div onclick="openLightbox(this)"
-          class="gallery-img cursor-pointer rounded-xl overflow-hidden border border-outline-light/50 bg-white fade-up">
-          <img alt="Ilustrasi upacara adat" class="w-full aspect-[4/3] object-cover"
-            src="assets/images/galeri/ilustrasi-04-upacara-adat.jpg" />
-          <div class="p-3 text-center">
-            <p class="text-sm text-outline">Upacara Adat</p>
-          </div>
-        </div>
-        <div onclick="openLightbox(this)"
-          class="gallery-img cursor-pointer rounded-xl overflow-hidden border border-outline-light/50 bg-white fade-up">
-          <img alt="Ilustrasi wayang" class="w-full aspect-[4/3] object-cover"
-            src="assets/images/galeri/ilustrasi-05-wayang.jpg" />
-          <div class="p-3 text-center">
-            <p class="text-sm text-outline">Elemen Wayang</p>
-          </div>
-        </div>
-        <div onclick="openLightbox(this)"
-          class="gallery-img cursor-pointer rounded-xl overflow-hidden border border-outline-light/50 bg-white fade-up">
-          <img alt="Ilustrasi ornamen" class="w-full aspect-[4/3] object-cover"
-            src="assets/images/galeri/ilustrasi-06-ornamen.jpg" />
-          <div class="p-3 text-center">
-            <p class="text-sm text-outline">Ornamen Tradisional</p>
-          </div>
-        </div>
-      </div>
-      <p class="text-center text-sm text-outline mt-6">Menampilkan 6 dari 64 halaman • Klik gambar untuk memperbesar</p>
-    </div>
-  </section>
+
 
   <!-- MERCHANDISE -->
   <section id="merchandise" class="py-12 md:py-20 lg:py-28 bg-white relative overflow-hidden">
@@ -928,8 +863,8 @@
         <div>
           <h4 class="font-semibold uppercase tracking-widest text-xs text-emas mb-4">Menu</h4>
           <div class="space-y-2 text-sm"><a href="#tentang"
-              class="block text-white/60 hover:text-emas transition">Tentang Buku</a><a href="#galeri"
-              class="block text-white/60 hover:text-emas transition">Galeri</a><a href="#tradisi"
+              class="block text-white/60 hover:text-emas transition">Tentang Buku</a><a href="#merchandise"
+              class="block text-white/60 hover:text-emas transition">Merchandise</a><a href="#tradisi"
               class="block text-white/60 hover:text-emas transition">Tradisi</a><a href="#pesan"
               class="block text-white/60 hover:text-emas transition">Pesan Buku</a></div>
         </div>
