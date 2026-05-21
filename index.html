@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Gema Gamping: Kisah Sang Bekakak - Buku Ilustrasi Tradisi Saparan</title>
+  <meta name="description"
+    content="Buku ilustrasi eksklusif tentang Tradisi Saparan Bekakak Gamping, Yogyakarta. Pesan sekarang edisi terbatas." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
+  <script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: { 'sogan': '#43271a', 'sogan-light': '#5c3d2e', 'emas': '#d4a843', 'emas-light': '#eec058', 'krem': '#fef9f1', 'krem-dark': '#f2ede5', 'hijau': '#2d5016', 'hijau-light': '#43682b', 'merah': '#8b3a3a', 'coklat-text': '#50443f', 'outline': '#82746e', 'outline-light': '#d4c3bc' }, fontFamily: { 'display': ['Playfair Display', 'serif'], 'body': ['Inter', 'sans-serif'], 'accent': ['Dancing Script', 'cursive'] } } } }
+  </script>
+  <style>
+    html {
+      scroll-behavior: smooth
+    }
+
+    .batik-pattern {
+      background-image: radial-gradient(circle at 2px 2px, rgba(92, 61, 46, .05) 1px, transparent 0);
+      background-size: 24px 24px
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all .7s ease
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0)
+    }
+
+    .slide-left {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: all .7s ease
+    }
+
+    .slide-left.visible {
+      opacity: 1;
+      transform: translateX(0)
+    }
+
+    .slide-right {
+      opacity: 0;
+      transform: translateX(40px);
+      transition: all .7s ease
+    }
+
+    .slide-right.visible {
+      opacity: 1;
+      transform: translateX(0)
+    }
+
+    .book-shadow {
+      box-shadow: 20px 20px 60px rgba(67, 39, 26, .3), -5px -5px 20px rgba(255, 255, 255, .1)
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .4s ease
+    }
+
+    .accordion-content.open {
+      max-height: 500px
+    }
+
+    .gallery-img {
+      transition: transform .5s ease, box-shadow .5s ease
+    }
+
+    .gallery-img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 20px 40px rgba(67, 39, 26, .2)
+    }
+
+    .nav-scrolled {
+      background: rgba(254, 249, 241, .95) !important;
+      box-shadow: 0 2px 20px rgba(67, 39, 26, .1)
+    }
+
+    .nav-scrolled .nav-brand {
+      color: #43271a !important
+    }
+
+    .nav-scrolled .nav-link {
+      color: #50443f !important
+    }
+
+    .nav-scrolled .nav-link:hover {
+      color: #43271a !important
+    }
+
+    .nav-scrolled .nav-mobile-btn {
+      color: #43271a !important
+    }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: rgba(0, 0, 0, .9);
+      align-items: center;
+      justify-content: center
+    }
+
+    .lightbox.active {
+      display: flex
+    }
+
+    .float-wa {
+      animation: bounce-wa 2s infinite
+    }
+
+    @keyframes bounce-wa {
+
+      0%,
+      100% {
+        transform: translateY(0)
+      }
+
+      50% {
+        transform: translateY(-8px)
+      }
+    }
+
+    .hero-book {
+      animation: float 3s ease-in-out infinite
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: rotate(2deg) translateY(0)
+      }
+
+      50% {
+        transform: rotate(0deg) translateY(-10px)
+      }
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: -200% 0
+      }
+
+      100% {
+        background-position: 200% 0
+      }
+    }
+
+    .shimmer-badge {
+      background: linear-gradient(90deg, #d4a843 0%, #eec058 50%, #d4a843 100%);
+      background-size: 200% 100%;
+      animation: shimmer 3s infinite
+    }
+  </style>
+</head>
+
+<body class="bg-krem text-coklat-text font-body antialiased overflow-x-hidden">
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <button class="absolute top-6 right-6 text-white text-4xl z-[101]" onclick="closeLightbox()">&times;</button>
+    <img id="lightbox-img" class="max-w-[90vw] max-h-[90vh] object-contain rounded-lg" src="" alt="Preview" />
+  </div>
+
+  <!-- MOBILE MENU OVERLAY -->
+  <div id="mobile-menu"
+    class="fixed inset-0 z-[60] bg-krem translate-x-full transition-transform duration-300 flex flex-col items-center justify-center space-y-8">
+    <button onclick="toggleMobile()" class="absolute top-5 right-6 text-sogan"><span
+        class="material-symbols-outlined text-3xl">close</span></button>
+    <a href="#tentang" onclick="toggleMobile()"
+      class="font-display text-2xl text-sogan hover:text-emas transition">Tentang Buku</a>
+    <a href="#galeri" onclick="toggleMobile()"
+      class="font-display text-2xl text-sogan hover:text-emas transition">Galeri</a>
+    <a href="#merchandise" onclick="toggleMobile()"
+      class="font-display text-2xl text-sogan hover:text-emas transition">Merchandise</a>
+    <a href="#tradisi" onclick="toggleMobile()"
+      class="font-display text-2xl text-sogan hover:text-emas transition">Tradisi</a>
+    <a href="#penulis" onclick="toggleMobile()"
+      class="font-display text-2xl text-sogan hover:text-emas transition">Penulis</a>
+    <a href="#testimoni" onclick="toggleMobile()"
+      class="font-display text-2xl text-sogan hover:text-emas transition">Testimoni</a>
+    <a href="#pesan" onclick="toggleMobile()"
+      class="shimmer-badge text-white font-body font-semibold text-sm tracking-widest uppercase px-8 py-3 rounded-lg">Pesan
+      Sekarang</a>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar" class="fixed top-0 w-full z-50 bg-transparent transition-all duration-500">
+    <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
+      <a href="#"
+        class="nav-brand font-display text-xl font-bold text-emas tracking-tight transition-colors duration-500">Gema
+        Gamping</a>
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="#tentang"
+          class="nav-link text-xs font-semibold uppercase tracking-widest text-white/80 hover:text-emas-light transition-colors duration-500">Tentang</a>
+        <a href="#galeri"
+          class="nav-link text-xs font-semibold uppercase tracking-widest text-white/80 hover:text-emas-light transition-colors duration-500">Galeri</a>
+        <a href="#merchandise"
+          class="nav-link text-xs font-semibold uppercase tracking-widest text-white/80 hover:text-emas-light transition-colors duration-500">Merchandise</a>
+        <a href="#tradisi"
+          class="nav-link text-xs font-semibold uppercase tracking-widest text-white/80 hover:text-emas-light transition-colors duration-500">Tradisi</a>
+        <a href="#penulis"
+          class="nav-link text-xs font-semibold uppercase tracking-widest text-white/80 hover:text-emas-light transition-colors duration-500">Penulis</a>
+        <a href="#pesan"
+          class="shimmer-badge text-white text-xs font-semibold uppercase tracking-widest px-5 py-2 rounded transition hover:opacity-90">Pesan
+          Sekarang</a>
+      </div>
+      <button onclick="toggleMobile()" class="nav-mobile-btn md:hidden text-white transition-colors duration-500"><span
+          class="material-symbols-outlined">menu</span></button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="relative min-h-screen flex items-center overflow-hidden pt-20">
+    <div class="absolute inset-0">
+      <img src="assets/images/cover/Background Cover.png" alt="Background Cover" class="w-full h-full object-cover" />
+    </div>
+    <div class="absolute inset-0 bg-black/70"></div>
+    <div class="relative z-10 max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="space-y-6 fade-up">
+        <div class="inline-flex items-center space-x-2 px-4 py-1.5 bg-white/10 rounded-full border border-white/20">
+          <span class="material-symbols-outlined text-emas-light text-sm"
+            style="font-variation-settings:'FILL' 1">auto_awesome</span>
+          <span class="text-xs font-semibold uppercase tracking-widest text-emas-light">Edisi Terbatas</span>
+        </div>
+        <h1 class="font-display text-4xl md:text-6xl font-bold text-white leading-tight">Gema Gamping:<br /><span
+            class="text-emas-light">Kisah Sang Bekakak</span></h1>
+        <p class="text-lg text-white/80 max-w-lg leading-relaxed">Menyelami kedalaman Tradisi Saparan Bekakak
+          melalui perpaduan narasi akademis dan ilustrasi memukau. Sebuah penghormatan pada warisan budaya Yogyakarta.
+        </p>
+        <div class="flex flex-wrap gap-4 pt-2">
+          <a href="#pesan"
+            class="shimmer-badge text-white font-semibold text-sm uppercase tracking-widest px-8 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5">Pesan
+            Sekarang</a>
+          <a href="#galeri"
+            class="border-2 border-white text-white font-semibold text-sm uppercase tracking-widest px-8 py-3 rounded-lg hover:bg-white hover:text-sogan transition-all">Lihat
+            Preview</a>
+        </div>
+        <div class="flex items-center gap-6 pt-4 text-sm text-white/60">
+          <div class="flex items-center gap-1"><span class="material-symbols-outlined text-emas-light text-base"
+              style="font-variation-settings:'FILL' 1">menu_book</span> 64 Halaman</div>
+          <div class="flex items-center gap-1"><span class="material-symbols-outlined text-emas-light text-base"
+              style="font-variation-settings:'FILL' 1">palette</span> Full Color</div>
+          <div class="flex items-center gap-1"><span class="material-symbols-outlined text-emas-light text-base"
+              style="font-variation-settings:'FILL' 1">verified</span> ISBN Resmi</div>
+        </div>
+      </div>
+      <div class="flex justify-center fade-up">
+        <div class="relative hero-book">
+          <div
+            class="w-72 md:w-80 aspect-[2/3] rounded-lg book-shadow overflow-hidden border border-outline-light/50 bg-sogan">
+            <img alt="Cover Buku Gema Gamping" class="w-full h-full object-cover"
+              src="assets/images/cover/Cover Image.png" />
+            <div
+              class="absolute inset-0 bg-gradient-to-tr from-black/30 via-transparent to-white/10 pointer-events-none">
+            </div>
+          </div>
+          <img src="assets/images/cover/New Arrival.png" alt="New Arrival"
+            class="absolute -top-10 -right-10 w-36 h-36 object-contain drop-shadow-lg z-10 rotate-12" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- TENTANG BUKU -->
+  <section id="tentang" class="relative py-20 md:py-28 overflow-hidden">
+    <div class="absolute inset-0">
+      <img src="assets/images/cover/Batik Parang.JPG" alt="Batik Parang" class="w-full h-full object-cover" />
+    </div>
+    <div class="absolute inset-0 bg-white/90"></div>
+    <div class="relative z-10 max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16 fade-up">
+        <span class="font-accent text-emas text-xl">Tentang Buku</span>
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-sogan mt-2">Sebuah Karya yang Bermakna</h2>
+        <div class="w-16 h-1 bg-emas mx-auto mt-4 rounded-full"></div>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div class="slide-left">
+          <div class="bg-sogan rounded-xl p-8 border border-sogan-light/50">
+            <h3 class="font-display text-2xl font-semibold text-white mb-4">Sinopsis</h3>
+            <p class="text-white/80 leading-relaxed mb-6">Buku ilustrasi "Gema Gamping: Kisah Sang Bekakak"
+              mengajak pembaca menyelami kekayaan Tradisi Saparan Bekakak yang telah mengakar di Gamping, Yogyakarta.
+              Melalui ilustrasi yang memukau dan narasi yang mendalam, buku ini mendokumentasikan prosesi adat yang
+              penuh makna filosofis tentang pengorbanan, kebersamaan, dan syukur kepada Sang Pencipta.</p>
+            <p class="text-white/80 leading-relaxed">Setiap halaman dirancang dengan penuh dedikasi sebagai bentuk
+              pelestarian warisan budaya Nusantara melalui medium visual yang artistik dan akademis.</p>
+          </div>
+        </div>
+        <div class="slide-right space-y-6">
+          <h3 class="font-display text-2xl font-semibold text-sogan">Spesifikasi Buku</h3>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="bg-sogan rounded-lg p-4 text-center border border-sogan-light/30">
+              <p class="text-xs uppercase tracking-widest text-white/60 mb-1">Ukuran</p>
+              <p class="font-semibold text-white">A4 (21×29.7cm)</p>
+            </div>
+            <div class="bg-sogan rounded-lg p-4 text-center border border-sogan-light/30">
+              <p class="text-xs uppercase tracking-widest text-white/60 mb-1">Halaman</p>
+              <p class="font-semibold text-white">64 Halaman</p>
+            </div>
+            <div class="bg-sogan rounded-lg p-4 text-center border border-sogan-light/30">
+              <p class="text-xs uppercase tracking-widest text-white/60 mb-1">Kertas</p>
+              <p class="font-semibold text-white">Art Paper 150gr</p>
+            </div>
+            <div class="bg-sogan rounded-lg p-4 text-center border border-sogan-light/30">
+              <p class="text-xs uppercase tracking-widest text-white/60 mb-1">Jilid</p>
+              <p class="font-semibold text-white">Hardcover</p>
+            </div>
+          </div>
+          <div class="flex items-end gap-3 pt-2">
+            <span class="text-sm text-outline line-through">Rp 140.000</span>
+            <span class="font-display text-3xl font-bold text-emas">Rp 85.000</span>
+            <span class="bg-merah text-white text-xs font-bold px-2 py-0.5 rounded">-39%</span>
+          </div>
+          <div class="flex flex-wrap gap-3 pt-2">
+            <div class="flex items-center gap-2 text-sm text-coklat-text/70"><span
+                class="material-symbols-outlined text-hijau-light text-base"
+                style="font-variation-settings:'FILL' 1">check_circle</span>Ilustrasi Original</div>
+            <div class="flex items-center gap-2 text-sm text-coklat-text/70"><span
+                class="material-symbols-outlined text-hijau-light text-base"
+                style="font-variation-settings:'FILL' 1">check_circle</span>Riset Mendalam</div>
+            <div class="flex items-center gap-2 text-sm text-coklat-text/70"><span
+                class="material-symbols-outlined text-hijau-light text-base"
+                style="font-variation-settings:'FILL' 1">check_circle</span>Full Color Premium</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERI -->
+  <section id="galeri" class="py-20 md:py-28 bg-krem-dark">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16 fade-up">
+        <span class="font-accent text-emas text-xl">Preview Buku</span>
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-sogan mt-2">Galeri Ilustrasi</h2>
+        <div class="w-16 h-1 bg-emas mx-auto mt-4 rounded-full"></div>
+        <p class="text-coklat-text/70 mt-4 max-w-lg mx-auto">Intip beberapa halaman pilihan dari buku ilustrasi ini</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div onclick="openLightbox(this)"
+          class="gallery-img cursor-pointer rounded-xl overflow-hidden border border-outline-light/50 bg-white fade-up">
+          <img alt="Ilustrasi prosesi Saparan" class="w-full aspect-[4/3] object-cover"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuARxsjS4TSdzVFRyl0oNAxiOkqG24LtFfR4MlXicteCjVVkTB75sCY05x95fiUN2XtPRK-coKSqkKr0kp2_zNQt8fhot-qu9cFKdJf2RH2SjbOXvI6ooCezh45l_spMhcIHKjL3cHmTw95DMpU8Yrm8kMS6EC3-F4WiooSM-K0VcOqeBq0wxdB00rYTlq04Q3M-SEY-gv-y-EL-QoRUNhXuTLLQkJ3AzavLmGljgmfe4fTGtHCkxit_y_2lP7_eFcwgsEF3Y1JYEXGF" />
+          <div class="p-3 text-center">
+            <p class="text-sm text-outline">Prosesi Tradisi Saparan</p>
+          </div>
+        </div>
+        <div onclick="openLightbox(this)"
+          class="gallery-img cursor-pointer rounded-xl overflow-hidden border border-outline-light/50 bg-white fade-up">
+          <img alt="Ilustrasi Bekakak" class="w-full aspect-[4/3] object-cover"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmMHAbX_HsOleRfTaGOla33fz6l1lvzjbLAZSLoPSNz8PJlcaTtRDocGI21jPhhH88sDNue1sMoA20nSkJUPS1mPrSLURLhU7jng6PkmCBqYg87kTep0c4xxIbJInh5jcc3jb4ruVDdUWVlZL5ivPAbKRe51wxrezReicRXdc7GRYuTCLTJJuo6fcDSeAsSQebXbVH1D-6WDPkNyYmBPCXVGMBZfsDUARK1dpcbtm4C7p6U17rchWLODbsj41KotFvfu0v3SmHXx8H" />
+          <div class="p-3 text-center">
+            <p class="text-sm text-outline">Sang Bekakak</p>
+          </div>
+        </div>
+        <div onclick="openLightbox(this)"
+          class="gallery-img cursor-pointer rounded-xl overflow-hidden border border-outline-light/50 bg-white fade-up">
+          <img alt="Ilustrasi budaya Jawa" class="w-full aspect-[4/3] object-cover"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuARxsjS4TSdzVFRyl0oNAxiOkqG24LtFfR4MlXicteCjVVkTB75sCY05x95fiUN2XtPRK-coKSqkKr0kp2_zNQt8fhot-qu9cFKdJf2RH2SjbOXvI6ooCezh45l_spMhcIHKjL3cHmTw95DMpU8Yrm8kMS6EC3-F4WiooSM-K0VcOqeBq0wxdB00rYTlq04Q3M-SEY-gv-y-EL-QoRUNhXuTLLQkJ3AzavLmGljgmfe4fTGtHCkxit_y_2lP7_eFcwgsEF3Y1JYEXGF" />
+          <div class="p-3 text-center">
+            <p class="text-sm text-outline">Budaya Gamping</p>
+          </div>
+        </div>
+        <div onclick="openLightbox(this)"
+          class="gallery-img cursor-pointer rounded-xl overflow-hidden border border-outline-light/50 bg-white fade-up">
+          <img alt="Ilustrasi upacara adat" class="w-full aspect-[4/3] object-cover"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmMHAbX_HsOleRfTaGOla33fz6l1lvzjbLAZSLoPSNz8PJlcaTtRDocGI21jPhhH88sDNue1sMoA20nSkJUPS1mPrSLURLhU7jng6PkmCBqYg87kTep0c4xxIbJInh5jcc3jb4ruVDdUWVlZL5ivPAbKRe51wxrezReicRXdc7GRYuTCLTJJuo6fcDSeAsSQebXbVH1D-6WDPkNyYmBPCXVGMBZfsDUARK1dpcbtm4C7p6U17rchWLODbsj41KotFvfu0v3SmHXx8H" />
+          <div class="p-3 text-center">
+            <p class="text-sm text-outline">Upacara Adat</p>
+          </div>
+        </div>
+        <div onclick="openLightbox(this)"
+          class="gallery-img cursor-pointer rounded-xl overflow-hidden border border-outline-light/50 bg-white fade-up">
+          <img alt="Ilustrasi wayang" class="w-full aspect-[4/3] object-cover"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuARxsjS4TSdzVFRyl0oNAxiOkqG24LtFfR4MlXicteCjVVkTB75sCY05x95fiUN2XtPRK-coKSqkKr0kp2_zNQt8fhot-qu9cFKdJf2RH2SjbOXvI6ooCezh45l_spMhcIHKjL3cHmTw95DMpU8Yrm8kMS6EC3-F4WiooSM-K0VcOqeBq0wxdB00rYTlq04Q3M-SEY-gv-y-EL-QoRUNhXuTLLQkJ3AzavLmGljgmfe4fTGtHCkxit_y_2lP7_eFcwgsEF3Y1JYEXGF" />
+          <div class="p-3 text-center">
+            <p class="text-sm text-outline">Elemen Wayang</p>
+          </div>
+        </div>
+        <div onclick="openLightbox(this)"
+          class="gallery-img cursor-pointer rounded-xl overflow-hidden border border-outline-light/50 bg-white fade-up">
+          <img alt="Ilustrasi ornamen" class="w-full aspect-[4/3] object-cover"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmMHAbX_HsOleRfTaGOla33fz6l1lvzjbLAZSLoPSNz8PJlcaTtRDocGI21jPhhH88sDNue1sMoA20nSkJUPS1mPrSLURLhU7jng6PkmCBqYg87kTep0c4xxIbJInh5jcc3jb4ruVDdUWVlZL5ivPAbKRe51wxrezReicRXdc7GRYuTCLTJJuo6fcDSeAsSQebXbVH1D-6WDPkNyYmBPCXVGMBZfsDUARK1dpcbtm4C7p6U17rchWLODbsj41KotFvfu0v3SmHXx8H" />
+          <div class="p-3 text-center">
+            <p class="text-sm text-outline">Ornamen Tradisional</p>
+          </div>
+        </div>
+      </div>
+      <p class="text-center text-sm text-outline mt-6">Menampilkan 6 dari 64 halaman • Klik gambar untuk memperbesar</p>
+    </div>
+  </section>
+
+  <!-- MERCHANDISE -->
+  <section id="merchandise" class="py-20 md:py-28 bg-white relative overflow-hidden">
+    <div class="absolute inset-0 batik-pattern opacity-40"></div>
+    <div class="relative z-10 max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16 fade-up">
+        <span class="font-accent text-emas text-xl">Koleksi Eksklusif</span>
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-sogan mt-2">Merchandise</h2>
+        <div class="w-16 h-1 bg-emas mx-auto mt-4 rounded-full"></div>
+        <p class="text-coklat-text/70 mt-4 max-w-lg mx-auto">Lengkapi koleksimu dengan merchandise eksklusif bertema Gema Gamping</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- T-shirt Man -->
+        <div class="group bg-white rounded-2xl overflow-hidden border border-outline-light/50 shadow-sm hover:shadow-xl transition-all duration-500 fade-up">
+          <div class="relative overflow-hidden bg-krem-dark">
+            <img src="assets/images/merchandise/Tshirt Man.png" alt="T-shirt Pria Gema Gamping" class="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute top-3 left-3">
+              <span class="bg-sogan text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Populer</span>
+            </div>
+          </div>
+          <div class="p-5">
+            <h3 class="font-display text-lg font-semibold text-sogan">T-shirt Pria</h3>
+            <p class="text-sm text-coklat-text/60 mt-1">Kaos dengan desain ilustrasi Bekakak eksklusif</p>
+            <div class="flex items-center justify-between mt-4">
+              <span class="font-display text-xl font-bold text-emas">Rp 95.000</span>
+              <span class="material-symbols-outlined text-emas/60 text-sm" style="font-variation-settings:'FILL' 1">checkroom</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- T-shirt Women -->
+        <div class="group bg-white rounded-2xl overflow-hidden border border-outline-light/50 shadow-sm hover:shadow-xl transition-all duration-500 fade-up">
+          <div class="relative overflow-hidden bg-krem-dark">
+            <img src="assets/images/merchandise/Tshirt Women.png" alt="T-shirt Wanita Gema Gamping" class="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute top-3 left-3">
+              <span class="bg-sogan text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Populer</span>
+            </div>
+          </div>
+          <div class="p-5">
+            <h3 class="font-display text-lg font-semibold text-sogan">T-shirt Wanita</h3>
+            <p class="text-sm text-coklat-text/60 mt-1">Kaos wanita dengan sentuhan motif tradisional</p>
+            <div class="flex items-center justify-between mt-4">
+              <span class="font-display text-xl font-bold text-emas">Rp 95.000</span>
+              <span class="material-symbols-outlined text-emas/60 text-sm" style="font-variation-settings:'FILL' 1">checkroom</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tote Bag -->
+        <div class="group bg-white rounded-2xl overflow-hidden border border-outline-light/50 shadow-sm hover:shadow-xl transition-all duration-500 fade-up">
+          <div class="relative overflow-hidden bg-krem-dark">
+            <img src="assets/images/merchandise/Tote bag.png" alt="Tote Bag Gema Gamping" class="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute top-3 left-3">
+              <span class="bg-emas text-sogan text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Best Seller</span>
+            </div>
+          </div>
+          <div class="p-5">
+            <h3 class="font-display text-lg font-semibold text-sogan">Tote Bag</h3>
+            <p class="text-sm text-coklat-text/60 mt-1">Tas kanvas premium dengan ilustrasi original</p>
+            <div class="flex items-center justify-between mt-4">
+              <span class="font-display text-xl font-bold text-emas">Rp 65.000</span>
+              <span class="material-symbols-outlined text-emas/60 text-sm" style="font-variation-settings:'FILL' 1">shopping_bag</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Postcard Bekakak -->
+        <div class="group bg-white rounded-2xl overflow-hidden border border-outline-light/50 shadow-sm hover:shadow-xl transition-all duration-500 fade-up">
+          <div class="relative overflow-hidden bg-krem-dark">
+            <img src="assets/images/merchandise/Postcard Bekakak.png" alt="Postcard Bekakak" class="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-500" />
+          </div>
+          <div class="p-5">
+            <h3 class="font-display text-lg font-semibold text-sogan">Postcard Bekakak</h3>
+            <p class="text-sm text-coklat-text/60 mt-1">Kartu pos ilustrasi prosesi Sang Bekakak</p>
+            <div class="flex items-center justify-between mt-4">
+              <span class="font-display text-xl font-bold text-emas">Rp 15.000</span>
+              <span class="material-symbols-outlined text-emas/60 text-sm" style="font-variation-settings:'FILL' 1">mail</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Postcard Bregada -->
+        <div class="group bg-white rounded-2xl overflow-hidden border border-outline-light/50 shadow-sm hover:shadow-xl transition-all duration-500 fade-up">
+          <div class="relative overflow-hidden bg-krem-dark">
+            <img src="assets/images/merchandise/Postcard Bregada.png" alt="Postcard Bregada" class="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-500" />
+          </div>
+          <div class="p-5">
+            <h3 class="font-display text-lg font-semibold text-sogan">Postcard Bregada</h3>
+            <p class="text-sm text-coklat-text/60 mt-1">Kartu pos ilustrasi pasukan Bregada</p>
+            <div class="flex items-center justify-between mt-4">
+              <span class="font-display text-xl font-bold text-emas">Rp 15.000</span>
+              <span class="material-symbols-outlined text-emas/60 text-sm" style="font-variation-settings:'FILL' 1">mail</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Postcard Entitas Gaib -->
+        <div class="group bg-white rounded-2xl overflow-hidden border border-outline-light/50 shadow-sm hover:shadow-xl transition-all duration-500 fade-up">
+          <div class="relative overflow-hidden bg-krem-dark">
+            <img src="assets/images/merchandise/Postcard Entitas Gaib.png" alt="Postcard Entitas Gaib" class="w-full aspect-square object-cover group-hover:scale-105 transition-transform duration-500" />
+          </div>
+          <div class="p-5">
+            <h3 class="font-display text-lg font-semibold text-sogan">Postcard Entitas Gaib</h3>
+            <p class="text-sm text-coklat-text/60 mt-1">Kartu pos ilustrasi mistis Entitas Gaib</p>
+            <div class="flex items-center justify-between mt-4">
+              <span class="font-display text-xl font-bold text-emas">Rp 15.000</span>
+              <span class="material-symbols-outlined text-emas/60 text-sm" style="font-variation-settings:'FILL' 1">mail</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bundle CTA -->
+      <div class="mt-12 fade-up">
+        <div class="bg-gradient-to-r from-sogan to-sogan-light rounded-2xl p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6 border border-sogan-light/30">
+          <div class="text-center md:text-left">
+            <h3 class="font-display text-2xl font-bold text-white">Paket Bundling Hemat!</h3>
+            <p class="text-white/70 mt-2">Dapatkan buku + merchandise pilihan dengan harga spesial. Hubungi kami untuk info lengkap.</p>
+          </div>
+          <a href="https://wa.me/628999589006?text=Halo%2C%20saya%20tertarik%20dengan%20paket%20bundling%20merchandise%20Gema%20Gamping.%20Bisa%20info%20lebih%20lanjut%3F" target="_blank"
+            class="shrink-0 shimmer-badge text-white font-semibold text-sm uppercase tracking-widest px-8 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5">
+            Tanya via WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRADISI -->
+  <section id="tradisi" class="relative py-20 md:py-28 text-white overflow-hidden">
+    <div class="absolute inset-0">
+      <img src="assets/images/tradisi/Background Cover Tradisi Parang.jpg" alt="Background Tradisi"
+        class="w-full h-full object-cover" />
+    </div>
+    <div class="absolute inset-0 bg-sogan/95"></div>
+    <div class="relative z-10 max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16 fade-up">
+        <span class="font-accent text-emas-light text-xl">Warisan Budaya</span>
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-white mt-2">Tradisi Saparan Bekakak</h2>
+        <div class="w-16 h-1 bg-emas mx-auto mt-4 rounded-full"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
+        <div class="slide-left space-y-6">
+          <p class="text-white/80 leading-relaxed">Tradisi Saparan Bekakak merupakan upacara adat yang digelar setiap
+            bulan Sapar di Dusun Gamping, Ambarketawang, Sleman, Yogyakarta. Tradisi ini bermula dari legenda sepasang
+            abdi dalem Keraton Yogyakarta bernama Bekakak dan istrinya yang setia mengabdi.</p>
+          <p class="text-white/80 leading-relaxed">Prosesi utama melibatkan pemotongan sepasang boneka pengantin
+            (bekakak) yang melambangkan pengorbanan dan keikhlasan. Masyarakat memperebutkan potongan bekakak sebagai
+            simbol keberkahan.</p>
+          <div class="bg-white/10 backdrop-blur rounded-lg p-6 border border-white/20">
+            <p class="font-accent text-emas-light text-lg italic">"Saparan Bekakak bukan sekadar ritual, melainkan
+              refleksi kebersamaan dan pengorbanan yang melampaui waktu."</p>
+          </div>
+        </div>
+        <div class="slide-right">
+          <div class="space-y-4">
+            <div class="flex items-start gap-4 bg-white/5 rounded-lg p-4 border border-white/10">
+              <div class="w-10 h-10 rounded-full bg-emas/20 flex items-center justify-center shrink-0"><span
+                  class="text-emas font-bold">1</span></div>
+              <div>
+                <h4 class="font-semibold text-white">Persiapan & Doa</h4>
+                <p class="text-white/60 text-sm">Pembuatan boneka bekakak dan sesaji oleh masyarakat dusun</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 bg-white/5 rounded-lg p-4 border border-white/10">
+              <div class="w-10 h-10 rounded-full bg-emas/20 flex items-center justify-center shrink-0"><span
+                  class="text-emas font-bold">2</span></div>
+              <div>
+                <h4 class="font-semibold text-white">Kirab & Prosesi</h4>
+                <p class="text-white/60 text-sm">Arak-arakan boneka bekakak mengelilingi dusun dengan iringan gamelan
+                </p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 bg-white/5 rounded-lg p-4 border border-white/10">
+              <div class="w-10 h-10 rounded-full bg-emas/20 flex items-center justify-center shrink-0"><span
+                  class="text-emas font-bold">3</span></div>
+              <div>
+                <h4 class="font-semibold text-white">Pemotongan Bekakak</h4>
+                <p class="text-white/60 text-sm">Puncak acara: pemotongan boneka sebagai simbol pengorbanan</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 bg-white/5 rounded-lg p-4 border border-white/10">
+              <div class="w-10 h-10 rounded-full bg-emas/20 flex items-center justify-center shrink-0"><span
+                  class="text-emas font-bold">4</span></div>
+              <div>
+                <h4 class="font-semibold text-white">Rebutan & Syukuran</h4>
+                <p class="text-white/60 text-sm">Warga berebut potongan bekakak sebagai simbol berkah dan keselamatan
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="fade-up bg-white/5 rounded-xl p-6 border border-white/10 flex flex-col md:flex-row items-center gap-6">
+        <span class="material-symbols-outlined text-emas text-4xl"
+          style="font-variation-settings:'FILL' 1">location_on</span>
+        <div class="text-center md:text-left">
+          <h4 class="font-semibold text-white">Lokasi Tradisi</h4>
+          <p class="text-white/60 text-sm">Dusun Gamping, Ambarketawang, Sleman, D.I. Yogyakarta</p>
+        </div>
+        <a href="https://maps.google.com/?q=Gamping+Ambarketawang+Sleman+Yogyakarta" target="_blank"
+          class="border border-emas text-emas text-sm px-5 py-2 rounded hover:bg-emas hover:text-sogan transition ml-auto">Lihat
+          di Maps</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PENULIS -->
+  <section id="penulis" class="py-20 md:py-28 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16 fade-up">
+        <span class="font-accent text-emas text-xl">Di Balik Karya</span>
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-sogan mt-2">Tentang Penulis</h2>
+        <div class="w-16 h-1 bg-emas mx-auto mt-4 rounded-full"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center max-w-4xl mx-auto">
+        <div class="flex justify-center slide-left">
+          <div
+            class="w-64 h-64 rounded-full bg-gradient-to-br from-emas/30 to-sogan/20 overflow-hidden border-4 border-emas/30 shadow-xl">
+            <img src="assets/images/penulis/Photo Profile.JPEG" alt="Nicolaus Indra Permana"
+              class="w-full h-full object-cover" />
+          </div>
+        </div>
+        <div class="slide-right space-y-4">
+          <h3 class="font-display text-2xl font-semibold text-sogan">Nicolaus Indra Permana</h3>
+          <p class="text-sm text-outline italic">Penulis & Ilustrator</p>
+          <p class="text-coklat-text/80 leading-relaxed">Mahasiswa Program Studi Desain Komunikasi Visual yang memiliki
+            ketertarikan mendalam terhadap pelestarian budaya Nusantara melalui medium visual. Buku ini merupakan hasil
+            penelitian skripsi yang menggabungkan pendekatan akademis dengan seni ilustrasi.</p>
+          <p class="text-coklat-text/80 leading-relaxed">Dengan riset lapangan yang intensif di Gamping, Yogyakarta,
+            penulis berharap buku ini dapat menjadi jembatan antara generasi muda dan warisan budaya leluhur.</p>
+          <div class="flex gap-4 pt-2">
+            <a href="https://instagram.com/nclsfx_" target="_blank"
+              class="w-10 h-10 rounded-full bg-sogan/10 flex items-center justify-center text-sogan hover:bg-sogan hover:text-white transition"><svg
+                class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+              </svg></a>
+            <a href="https://www.linkedin.com/in/nicolaus-indra-permana-537757359/" target="_blank"
+              class="w-10 h-10 rounded-full bg-sogan/10 flex items-center justify-center text-sogan hover:bg-sogan hover:text-white transition"><svg
+                class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+              </svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONI -->
+  <section id="testimoni" class="py-20 md:py-28 bg-krem">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16 fade-up">
+        <span class="font-accent text-emas text-xl">Apa Kata Mereka</span>
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-sogan mt-2">Testimoni</h2>
+        <div class="w-16 h-1 bg-emas mx-auto mt-4 rounded-full"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div
+          class="bg-white rounded-xl p-6 border border-outline-light/50 shadow-sm hover:shadow-md transition fade-up">
+          <div class="flex text-emas mb-3"><span class="material-symbols-outlined text-sm"
+              style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-sm"
+              style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-sm"
+              style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-sm"
+              style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-sm"
+              style="font-variation-settings:'FILL' 1">star</span></div>
+          <p class="text-coklat-text/80 text-sm leading-relaxed mb-4 italic">"Ilustrasinya sangat memukau dan detail.
+            Buku ini berhasil menangkap esensi tradisi Saparan Bekakak dengan cara yang indah dan mudah dipahami."</p>
+          <div class="flex items-center gap-3">
+            <div
+              class="w-10 h-10 rounded-full bg-sogan/10 flex items-center justify-center font-bold text-sogan text-sm">
+              DS</div>
+            <div>
+              <p class="font-semibold text-sogan text-sm">Dosen Pembimbing</p>
+              <p class="text-xs text-outline">Akademisi</p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="bg-white rounded-xl p-6 border border-outline-light/50 shadow-sm hover:shadow-md transition fade-up">
+          <div class="flex text-emas mb-3"><span class="material-symbols-outlined text-sm"
+              style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-sm"
+              style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-sm"
+              style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-sm"
+              style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-sm"
+              style="font-variation-settings:'FILL' 1">star</span></div>
+          <p class="text-coklat-text/80 text-sm leading-relaxed mb-4 italic">"Sebagai warga Gamping, saya sangat
+            tersentuh melihat tradisi kami didokumentasikan dengan begitu indah. Karya yang luar biasa!"</p>
+          <div class="flex items-center gap-3">
+            <div
+              class="w-10 h-10 rounded-full bg-sogan/10 flex items-center justify-center font-bold text-sogan text-sm">
+              WG</div>
+            <div>
+              <p class="font-semibold text-sogan text-sm">Warga Gamping</p>
+              <p class="text-xs text-outline">Tokoh Masyarakat</p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="bg-white rounded-xl p-6 border border-outline-light/50 shadow-sm hover:shadow-md transition fade-up">
+          <div class="flex text-emas mb-3"><span class="material-symbols-outlined text-sm"
+              style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-sm"
+              style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-sm"
+              style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-sm"
+              style="font-variation-settings:'FILL' 1">star</span><span class="material-symbols-outlined text-sm"
+              style="font-variation-settings:'FILL' 1">star</span></div>
+          <p class="text-coklat-text/80 text-sm leading-relaxed mb-4 italic">"Kualitas cetak dan ilustrasinya premium
+            banget! Cocok untuk koleksi pecinta budaya Jawa dan referensi penelitian."</p>
+          <div class="flex items-center gap-3">
+            <div
+              class="w-10 h-10 rounded-full bg-sogan/10 flex items-center justify-center font-bold text-sogan text-sm">
+              BP</div>
+            <div>
+              <p class="font-semibold text-sogan text-sm">Budayawan</p>
+              <p class="text-xs text-outline">Pecinta Budaya</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PEMESANAN -->
+  <section id="pesan" class="py-20 md:py-28 bg-gradient-to-br from-sogan-light to-sogan text-white">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center mb-12 fade-up">
+        <span class="font-accent text-emas-light text-xl">Dapatkan Bukumu</span>
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-white mt-2">Pesan Sekarang</h2>
+        <div class="w-16 h-1 bg-emas mx-auto mt-4 rounded-full"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white/10 backdrop-blur rounded-xl p-6 border border-white/20 fade-up">
+          <h3 class="font-display text-xl font-semibold mb-6 text-white">Form Pemesanan</h3>
+          <form id="order-form" class="space-y-4">
+            <div><label class="text-sm text-white/70 mb-1 block">Nama Lengkap</label><input type="text" id="nama"
+                required
+                class="w-full px-4 py-2.5 rounded bg-white/10 border border-white/20 text-white placeholder-white/40 focus:border-emas focus:outline-none transition"
+                placeholder="Masukkan nama" /></div>
+            <div><label class="text-sm text-white/70 mb-1 block">No. WhatsApp</label><input type="tel" id="whatsapp"
+                required
+                class="w-full px-4 py-2.5 rounded bg-white/10 border border-white/20 text-white placeholder-white/40 focus:border-emas focus:outline-none transition"
+                placeholder="08xxxxxxxxxx" /></div>
+            <div><label class="text-sm text-white/70 mb-1 block">Alamat Pengiriman</label><textarea id="alamat" rows="2"
+                required
+                class="w-full px-4 py-2.5 rounded bg-white/10 border border-white/20 text-white placeholder-white/40 focus:border-emas focus:outline-none transition resize-none"
+                placeholder="Alamat lengkap"></textarea></div>
+            <div><label class="text-sm text-white/70 mb-1 block">Jumlah Buku</label>
+              <div class="flex items-center gap-3"><button type="button" onclick="changeQty(-1)"
+                  class="w-9 h-9 rounded bg-white/10 border border-white/20 text-white hover:bg-white/20 transition">−</button><input
+                  type="number" id="qty" value="1" min="1"
+                  class="w-16 text-center px-2 py-2 rounded bg-white/10 border border-white/20 text-white focus:outline-none" /><button
+                  type="button" onclick="changeQty(1)"
+                  class="w-9 h-9 rounded bg-white/10 border border-white/20 text-white hover:bg-white/20 transition">+</button>
+              </div>
+            </div>
+            <div class="bg-white/5 rounded-lg p-4 border border-white/10">
+              <div class="flex justify-between text-sm"><span class="text-white/60">Harga per buku</span><span>Rp
+                  85.000</span></div>
+              <div class="flex justify-between text-sm mt-1"><span class="text-white/60">Jumlah</span><span
+                  id="qty-display">1</span></div>
+              <hr class="border-white/10 my-2" />
+              <div class="flex justify-between font-bold text-lg"><span>Total</span><span id="total-price"
+                  class="text-emas-light">Rp 85.000</span></div>
+            </div>
+            <button type="submit"
+              class="w-full shimmer-badge text-white font-semibold text-sm uppercase tracking-widest py-3 rounded-lg hover:opacity-90 transition">Kirim
+              Pesanan via WhatsApp</button>
+          </form>
+        </div>
+        <div class="space-y-6 fade-up">
+          <div class="bg-white/10 backdrop-blur rounded-xl p-6 border border-white/20">
+            <h3 class="font-display text-xl font-semibold mb-4 text-white">Metode Pembayaran</h3>
+            <div class="space-y-3">
+              <div class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-emas"
+                  style="font-variation-settings:'FILL' 1">account_balance</span>
+                <div>
+                  <p class="font-semibold">Transfer Bank BCA</p>
+                  <p class="text-white/60">7151863934 a.n. Nicolaus Indra Permana</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-emas"
+                  style="font-variation-settings:'FILL' 1">qr_code</span>
+                <div>
+                  <p class="font-semibold">QRIS</p>
+                  <p class="text-white/60">Scan QR saat konfirmasi pesanan</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-emas"
+                  style="font-variation-settings:'FILL' 1">wallet</span>
+                <div>
+                  <p class="font-semibold">DANA / OVO / GoPay</p>
+                  <p class="text-white/60">08999589006</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white/10 backdrop-blur rounded-xl p-6 border border-white/20">
+            <h3 class="font-display text-xl font-semibold mb-4 text-white">Info Pengiriman</h3>
+            <div class="space-y-2 text-sm text-white/70">
+              <p>📦 Pengiriman via JNE / J&T / SiCepat</p>
+              <p>🕐 Estimasi 2-5 hari kerja (Pulau Jawa)</p>
+              <p>💰 Ongkir ditanggung pembeli</p>
+              <p>✅ Gratis ongkir untuk daerah Jabodetabek</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-20 md:py-28 bg-white">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="text-center mb-12 fade-up">
+        <span class="font-accent text-emas text-xl">Pertanyaan Umum</span>
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-sogan mt-2">FAQ</h2>
+        <div class="w-16 h-1 bg-emas mx-auto mt-4 rounded-full"></div>
+      </div>
+      <div class="space-y-3 fade-up">
+        <div class="border border-outline-light/50 rounded-xl overflow-hidden"><button onclick="toggleAccordion(this)"
+            class="w-full flex justify-between items-center px-6 py-4 text-left font-semibold text-sogan hover:bg-krem/50 transition"><span>Bagaimana
+              cara memesan buku?</span><span
+              class="material-symbols-outlined text-outline transition-transform duration-300">expand_more</span></button>
+          <div class="accordion-content px-6 text-sm text-coklat-text/70 leading-relaxed">
+            <p class="pb-4">Isi form pemesanan di atas, lalu klik "Kirim Pesanan via WhatsApp". Anda akan diarahkan ke
+              WhatsApp untuk konfirmasi pesanan dan pembayaran.</p>
+          </div>
+        </div>
+        <div class="border border-outline-light/50 rounded-xl overflow-hidden"><button onclick="toggleAccordion(this)"
+            class="w-full flex justify-between items-center px-6 py-4 text-left font-semibold text-sogan hover:bg-krem/50 transition"><span>Berapa
+              lama pengiriman?</span><span
+              class="material-symbols-outlined text-outline transition-transform duration-300">expand_more</span></button>
+          <div class="accordion-content px-6 text-sm text-coklat-text/70 leading-relaxed">
+            <p class="pb-4">Pengiriman dalam Pulau Jawa estimasi 2-5 hari kerja. Luar Jawa 5-10 hari kerja. Area
+              Yogyakarta dan Jabodetabek bisa COD atau ambil langsung.</p>
+          </div>
+        </div>
+        <div class="border border-outline-light/50 rounded-xl overflow-hidden"><button onclick="toggleAccordion(this)"
+            class="w-full flex justify-between items-center px-6 py-4 text-left font-semibold text-sogan hover:bg-krem/50 transition"><span>Apakah
+              tersedia versi digital / e-book?</span><span
+              class="material-symbols-outlined text-outline transition-transform duration-300">expand_more</span></button>
+          <div class="accordion-content px-6 text-sm text-coklat-text/70 leading-relaxed">
+            <p class="pb-4">Saat ini buku hanya tersedia dalam format cetak (hardcover). Versi digital sedang dalam
+              pertimbangan untuk rilis di masa mendatang.</p>
+          </div>
+        </div>
+        <div class="border border-outline-light/50 rounded-xl overflow-hidden"><button onclick="toggleAccordion(this)"
+            class="w-full flex justify-between items-center px-6 py-4 text-left font-semibold text-sogan hover:bg-krem/50 transition"><span>Bagaimana
+              jika buku rusak saat pengiriman?</span><span
+              class="material-symbols-outlined text-outline transition-transform duration-300">expand_more</span></button>
+          <div class="accordion-content px-6 text-sm text-coklat-text/70 leading-relaxed">
+            <p class="pb-4">Kami mengemas buku dengan bubble wrap dan kardus tebal. Jika terjadi kerusakan, hubungi kami
+              via WhatsApp dengan foto bukti dan kami akan mengirim pengganti.</p>
+          </div>
+        </div>
+        <div class="border border-outline-light/50 rounded-xl overflow-hidden"><button onclick="toggleAccordion(this)"
+            class="w-full flex justify-between items-center px-6 py-4 text-left font-semibold text-sogan hover:bg-krem/50 transition"><span>Apakah
+              bisa COD?</span><span
+              class="material-symbols-outlined text-outline transition-transform duration-300">expand_more</span></button>
+          <div class="accordion-content px-6 text-sm text-coklat-text/70 leading-relaxed">
+            <p class="pb-4">COD tersedia untuk area Jabodetabek dan sekitarnya. Untuk luar kota, pembayaran dilakukan
+              via
+              transfer sebelum pengiriman.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-sogan text-white py-16 border-t-4 border-emas">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+        <div>
+          <h3 class="font-display text-2xl font-bold mb-3">Gema Gamping</h3>
+          <p class="text-white/60 text-sm leading-relaxed">Sebuah dedikasi untuk pelestarian budaya Nusantara melalui
+            literasi visual yang bermakna.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold uppercase tracking-widest text-xs text-emas mb-4">Menu</h4>
+          <div class="space-y-2 text-sm"><a href="#tentang"
+              class="block text-white/60 hover:text-emas transition">Tentang Buku</a><a href="#galeri"
+              class="block text-white/60 hover:text-emas transition">Galeri</a><a href="#tradisi"
+              class="block text-white/60 hover:text-emas transition">Tradisi</a><a href="#pesan"
+              class="block text-white/60 hover:text-emas transition">Pesan Buku</a></div>
+        </div>
+        <div>
+          <h4 class="font-semibold uppercase tracking-widest text-xs text-emas mb-4">Kontak</h4>
+          <div class="space-y-2 text-sm text-white/60">
+            <p>📧 nicolausindrapermana26@gmail.com</p>
+            <p>📱 08999589006</p>
+            <p>📍 Jakarta, Indonesia</p>
+          </div>
+          <div class="flex gap-3 mt-4"><a href="#"
+              class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white/60 hover:bg-emas hover:text-sogan transition text-xs">IG</a><a
+              href="#"
+              class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white/60 hover:bg-emas hover:text-sogan transition text-xs">YT</a><a
+              href="#"
+              class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white/60 hover:bg-emas hover:text-sogan transition text-xs">TW</a>
+          </div>
+        </div>
+      </div>
+      <hr class="border-white/10" />
+      <div class="flex flex-col md:flex-row justify-between items-center pt-6 text-xs text-white/40 gap-2">
+        <p>© 2026 Gema Gamping: Kisah Sang Bekakak. Hak Cipta Dilindungi.</p>
+        <p>Skripsi — Program Studi Desain Komunikasi Visual</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLOAT -->
+  <a href="https://wa.me/628999589006?text=Halo%2C%20saya%20ingin%20memesan%20buku%20Gema%20Gamping" target="_blank"
+    class="float-wa fixed bottom-6 right-6 z-50 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition-colors"
+    title="Chat WhatsApp">
+    <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+    </svg>
+  </a>
+
+  <!-- BACK TO TOP -->
+  <button id="back-top" onclick="window.scrollTo({top:0})"
+    class="fixed bottom-6 left-6 z-50 w-12 h-12 bg-sogan/80 text-white rounded-full flex items-center justify-center shadow-lg hover:bg-sogan transition opacity-0 pointer-events-none"
+    style="transition:opacity .3s">
+    <span class="material-symbols-outlined">arrow_upward</span>
+  </button>
+
+  <script>
+    // Navbar scroll effect
+    const nav = document.getElementById('navbar'), backTop = document.getElementById('back-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 80) { nav.classList.add('nav-scrolled') } else { nav.classList.remove('nav-scrolled') }
+      if (window.scrollY > 400) { backTop.style.opacity = '1'; backTop.style.pointerEvents = 'auto' } else { backTop.style.opacity = '0'; backTop.style.pointerEvents = 'none' }
+    });
+    // Mobile menu
+    function toggleMobile() { document.getElementById('mobile-menu').classList.toggle('translate-x-full') }
+    // Intersection Observer for animations
+    const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target) } }) }, { threshold: 0.15 });
+    document.querySelectorAll('.fade-up,.slide-left,.slide-right').forEach(el => observer.observe(el));
+    // Lightbox
+    function openLightbox(el) { const img = el.querySelector('img'); if (img) { document.getElementById('lightbox-img').src = img.src; document.getElementById('lightbox').classList.add('active') } }
+    function closeLightbox() { document.getElementById('lightbox').classList.remove('active') }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox() });
+    // Accordion
+    function toggleAccordion(btn) { const content = btn.nextElementSibling, icon = btn.querySelector('.material-symbols-outlined'); const isOpen = content.classList.contains('open'); document.querySelectorAll('.accordion-content').forEach(c => c.classList.remove('open')); document.querySelectorAll('.accordion-content').forEach(c => { c.previousElementSibling.querySelector('.material-symbols-outlined').style.transform = 'rotate(0deg)' }); if (!isOpen) { content.classList.add('open'); icon.style.transform = 'rotate(180deg)' } }
+    // Order form
+    const PRICE = 85000;
+    function changeQty(d) { const q = document.getElementById('qty'); q.value = Math.max(1, parseInt(q.value || 1) + d); updatePrice() }
+    document.getElementById('qty').addEventListener('input', updatePrice);
+    function updatePrice() { const q = Math.max(1, parseInt(document.getElementById('qty').value || 1)); document.getElementById('qty-display').textContent = q; document.getElementById('total-price').textContent = 'Rp ' + new Intl.NumberFormat('id-ID').format(q * PRICE) }
+    document.getElementById('order-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const n = document.getElementById('nama').value, w = document.getElementById('whatsapp').value, a = document.getElementById('alamat').value, q = document.getElementById('qty').value, t = document.getElementById('total-price').textContent;
+      const msg = `Halo, saya ingin memesan buku *Gema Gamping: Kisah Sang Bekakak*%0A%0ANama: ${n}%0AWhatsApp: ${w}%0AAlamat: ${a}%0AJumlah: ${q} buku%0ATotal: ${t}%0A%0AMohon konfirmasi ketersediaan. Terima kasih!`;
+      window.open('https://wa.me/628999589006?text=' + msg, '_blank');
+    });
+  </script>
